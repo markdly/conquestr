@@ -1,0 +1,13 @@
+/*  example analysis  */
+reset;
+export logfile >> ex1.cql;
+Title ex1;   
+data ex1.txt;
+format pid 11-15 responses 1-9;
+codes 1,2,3,4,5,9;
+label << ex1.lab;
+key 252552444 ! 1;
+model item;
+estimate ! nodes = 30;
+show !estimate=latent >> ex1.shw;
+itanal >> ex1.itn;
