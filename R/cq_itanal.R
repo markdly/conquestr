@@ -83,7 +83,7 @@ cq_read_itanal <- function(fname) {
 #' @return A tibble containing itanal contents with numeric fields where appropriate.
 #'
 #' @examples
-#' fname <- cq_example_itanal(display = FALSE)
+#' fname <- cq_example(display = FALSE)
 #' df <- cq_itanal(fname)
 #'
 #' @export
@@ -105,7 +105,7 @@ cq_itanal <- function(fname) {
 #' @return A tibble containing stats for each item response
 #'
 #' @examples
-#' fname <- cq_example_itanal(display = FALSE)
+#' fname <- cq_example(display = FALSE)
 #' df <- cq_itanal(fname)
 #' cq_resp_stats(df)
 #'
@@ -117,27 +117,3 @@ cq_resp_stats <- function(itanal) {
 }
 
 
-#' Example ConQuest item analysis file
-#'
-#' @param n the number of lines to print. only used when \code{display = TRUE}.
-#' @param display When \code{TRUE} (the default) the example itanal is read and the first \code{n} lines are printed.
-#' The file path to example itanal file is returned invisibly.
-#' Use \code{FALSE} if just the itanal file path is needed. No output will be displayed.
-#' @return Invisibly returns a valid file path to an itanal file which can be used with other conquestr functions.
-#'
-#' @examples
-#' library(readr)
-#' fname <- cq_example_itanal(display = FALSE)
-#' fname
-#' cq_example_itanal(n = 7)
-#'
-#' @export
-cq_example_itanal <- function(n = 10, display = TRUE) {
-  fname <- system.file("extdata", "ex1.itn", package = "conquestr")
-  if (display) {
-    x <- readr::read_lines(fname)
-    cat(paste("Example itanal for first n =", n, "lines is:\n\n"))
-    print(utils::head(x, n))
-  }
-  invisible(fname)
-}
