@@ -11,3 +11,10 @@ model item;
 estimate ! nodes = 30;
 show !estimate=latent >> ex1.shw;
 itanal >> ex1.itn;
+
+/* 5 plausible values (default) */
+show cases !estimates=latent >> ex1_05.pv;
+
+/* 10 plausible values */
+set n_plausible=10;
+show cases !estimates=latent >> ex1_10.pv;
