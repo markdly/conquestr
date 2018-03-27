@@ -16,7 +16,7 @@ A tibble containing stats for each item response
 Extracts the response stats from an itanal into usable form
 }
 \examples{
-fname <- cq_example_itanal(display = FALSE)
+fname <- cq_example(display = FALSE)
 df <- cq_itanal(fname)
 cq_resp_stats(df)
 

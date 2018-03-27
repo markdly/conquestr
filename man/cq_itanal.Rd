@@ -16,7 +16,7 @@ A tibble containing itanal contents with numeric fields where appropriate.
 Main function to read an itanal. If it doesn't work try using cq_read_itanal instead
 }
 \examples{
-fname <- cq_example_itanal(display = FALSE)
+fname <- cq_example(display = FALSE)
 df <- cq_itanal(fname)
 
 }
