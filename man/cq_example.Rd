@@ -14,7 +14,7 @@ cq_example(n = 10, display = TRUE, example_name = c("ex1.itn",
 The file path to example conquest output file is returned invisibly.
 Use \code{FALSE} if just the conquest output file path is needed. No output will be displayed.}
 
-\item{name}{Specifies the example output file to use. Default is \code{"ex1.itn"}. Other options are
+\item{example_name}{Specifies the example output file to use. Default is \code{"ex1.itn"}. Other options are
 \code{"ex1_05.pv"} and \code{"ex1_10.pv"} which requests the plausible values example file with 5 or 10 pvs per case respectively.}
 }
 \value{

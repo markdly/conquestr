@@ -16,7 +16,7 @@ A tibble containing parsed results of the itanal file.
 Read in a traditional ConQuest item analysis file as text
 }
 \examples{
-fname <- cq_example_itanal(display = FALSE)
+fname <- cq_example(display = FALSE)
 df <- cq_read_itanal(fname)
 
 }

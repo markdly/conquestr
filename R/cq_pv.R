@@ -25,8 +25,8 @@ cq_pv <- function(fname, np = 5) {
   txt <- txt %>%
     dplyr::mutate(recid = rep(seq(1, n_cases), each = x)) %>%
     dplyr::mutate(field = rep(field_names, n_cases)) %>%
-    dplyr::mutate(value = trimws(value)) %>%
-    tidyr::separate(value, c("index", "val"), "[[:space:]]+", fill = "left")
+    dplyr::mutate(value = trimws(.data$value)) %>%
+    tidyr::separate(.data$value, c("index", "val"), "[[:space:]]+", fill = "left")
 
   txt
 }

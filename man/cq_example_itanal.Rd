@@ -6,6 +6,9 @@
 \usage{
 cq_example_itanal(...)
 }
+\arguments{
+\item{...}{arguments passed to \code{cq_example}}
+}
 \description{
 \code{cq_example_itanal} has been deprecated and may be removed from future versions.
 Please use \code{cq_example} instead.

@@ -14,7 +14,7 @@
 #' @return A tibble containing parsed results of the itanal file.
 #'
 #' @examples
-#' fname <- cq_example_itanal(display = FALSE)
+#' fname <- cq_example(display = FALSE)
 #' df <- cq_read_itanal(fname)
 #'
 #' @export
