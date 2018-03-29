@@ -1,10 +1,10 @@
 Package: conquestr
 Type: Package
-Title: Import Conquest Version 2 output files
-Version: 0.1.0
+Title: Conquest Version 2 and R
+Version: 0.1.2
 Author: Mark Dulhunty
 Maintainer: Mark Dulhunty <dulhunty@edmeasurement.com.au>
-Description: Import ConQuest Version 2 output. Results are imported as tibbles.
+Description: Make ConQuest syntax. Import ConQuest output files. 
 Depends: R (>= 3.4.1)
 License: MIT + file LICENSE
 Encoding: UTF-8
