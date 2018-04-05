@@ -85,6 +85,7 @@ cqc_syntax <- function(name, resp_cols, cmds = cqc_cmds(), lookup_vals = cqc_def
 #'
 #' writeLines(cqc_label(labels))
 #'
+#' @export
 cqc_label <- function(x, variable = "item") {
 
   c(paste("===>", variable), paste(seq_along(x), x))
@@ -104,10 +105,9 @@ cqc_label <- function(x, variable = "item") {
 #' @return writes a fixed width text file to `fname`. returns a dataframe containing column specifications
 #'
 #' @examples
-#' fname <- tempfile(fileext = ".txt")
-#' df <- as.data.frame(short_test)[-1]
-#' cqc_data(df, fname)
+#' cqc_data(as.data.frame(short_test)[-1], tempfile(fileext = ".txt"))
 #'
+#' @export
 cqc_data <- function(x, fname, item_names = names(x), extras = NULL) {
   if(!all(item_names %in% names(x))) stop("not all item_names provided exist in x")
   if(!all(extras %in% names(x))) stop("not all extras provided exist in x")
@@ -117,5 +117,3 @@ cqc_data <- function(x, fname, item_names = names(x), extras = NULL) {
   if(max(specs$width[specs$colname %in% item_names]) > 1) warning("some items had width greater than one")
   specs
 }
-
-
