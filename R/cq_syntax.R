@@ -66,3 +66,56 @@ cqc_syntax <- function(name, resp_cols, cmds = cqc_cmds(), lookup_vals = cqc_def
   glued
 }
 
+
+#' Make ConQuest label text
+#'
+#' Produces text compatible with the ConQuest label command.
+#' e.g. text is multiline containing
+#' `    ===> item` (where item is the conquest variable name)
+#' `    1 it01` (1 is the level, it01 is the label for level 1)
+#' `    2 it02` (2 is the level, it02 is the label for level 2)
+#'
+#' @param x a character vector containing labels
+#' @param variable the ConQuest variable associated with labels. Default is `items`. Other options might be `rater` etc.
+#' @return a character vector which can be written to a file for use by the ConQuest label command. levels are assigned in order of the provided labels
+#'
+#' @examples
+#' labels <- names(short_test)[-1]
+#' cqc_label(labels)
+#'
+#' writeLines(cqc_label(labels))
+#'
+cqc_label <- function(x, variable = "item") {
+
+  c(paste("===>", variable), paste(seq_along(x), x))
+
+}
+
+
+#' Make ConQuest fixed width text file
+#'
+#' Produces a fixed width text file for use with the ConQuest data command.
+#'
+#' @param x a dataframe containing responses for analysis. Optionally includes additional variables for analysis.
+#' @param fname a filename for exporting data to
+#' @param item_names character vector containing item names
+#' Each item should appear as a variable in `x`
+#' @param extras character variable containing extra variables for writing out
+#' @return writes a fixed width text file to `fname`. returns a dataframe containing column specifications
+#'
+#' @examples
+#' fname <- tempfile(fileext = ".txt")
+#' df <- as.data.frame(short_test)[-1]
+#' cqc_data(df, fname)
+#'
+cqc_data <- function(x, fname, item_names = names(x), extras = NULL) {
+  if(!all(item_names %in% names(x))) stop("not all item_names provided exist in x")
+  if(!all(extras %in% names(x))) stop("not all extras provided exist in x")
+  if(length(intersect(item_names, extras)) > 0) stop("some item_names also appear in extras")
+  x <- x[unique(c(item_names, extras))]
+  specs <- gdata::write.fwf(x, fname, colnames = FALSE, sep = "", na = "", formatInfo = TRUE)
+  if(max(specs$width[specs$colname %in% item_names]) > 1) warning("some items had width greater than one")
+  specs
+}
+
+
