@@ -1,15 +1,5 @@
-# Some useful keyboard shortcuts for package authoring:
-#
-#   Build and Reload Package:  'Ctrl + Shift + B'
-#   Check Package:             'Ctrl + Shift + E'
-#   Test Package:              'Ctrl + Shift + T'
-
 #' Read in a traditional ConQuest item analysis file as text
 #'
-#' @importFrom dplyr %>%
-#' @importFrom rlang .data
-#' @importFrom stats setNames
-#' @importFrom utils data
 #' @param fname A file path to an existing ConQuest itanal file. Can take other input as for readr::read_file
 #' @return A tibble containing parsed results of the itanal file.
 #'
