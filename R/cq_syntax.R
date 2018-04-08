@@ -13,7 +13,7 @@ cqc_cmds <- function() {
     data   = "data {name}.txt;",
     label  = "label << {name}.lab;",
     format = "format {group_resp_cols} responses {resp_cols};",
-    codes  = "{codes};",
+    codes  = "codes {codes};",
     key    = "key {key} ! {score};",
     model  = "model {model};",
     regression = "regression {regression_groups};",
