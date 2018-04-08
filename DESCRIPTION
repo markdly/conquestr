@@ -18,4 +18,8 @@ Imports: dplyr,
     glue,
     gdata
 RoxygenNote: 6.0.1
-Suggests: testthat
+Suggests: testthat,
+    knitr,
+    rmarkdown,
+    here
+VignetteBuilder: knitr

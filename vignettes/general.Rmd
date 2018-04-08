@@ -1,0 +1,110 @@
+---
+title: "Using conquestr with ConQuest"
+author: "Mark Dulhunty"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+This vignette is intended to walkthrough the use of existing `conquestr` functions. 
+
+```{r installing, eval=FALSE}
+# install.packages("devtools")
+devtools::install_github("markdly/conquestr")
+```
+
+
+A typical analysis using ConQuest software involves an item analysis based on student responses to an assessment the students attempted (e.g. mathematics test). `conquestr` comes with an inbuilt dataset (`short_test`) which contains multiple-choice responses to 9 questions. The test was attempted `r nrow(conquestr::short_test)` times. 
+
+```{r example_data, message=FALSE}
+library(dplyr)
+library(conquestr)
+df <- as.data.frame(short_test)
+head(df)
+```
+
+The `pid` column contains a unique identifier for each test attempt. The responses to the 9 questions are contained in columns `q1` to `q9`. Values indicate the answer option chosen with `NA` values indicating a missing response. For example, for test attempt `10001`, the 5th answer option was chosen for `q2`.
+
+For these examples the `pid` isn't necessary. At this stage we are interested in item responses only.
+
+```{r items_only}
+df <- select(df, -pid)
+```
+
+The answer key contains the correct answer for each question
+
+```{r answer_key}
+answer_key <- dplyr::arrange(short_test_score_key, item)
+answer_key
+```
+
+The next step is to take the data we want to analyse and convert it into a format ConQuest can use. We can do this by using the `cqc_data` function which writes out a dataframe of responses in fixed-width text format to a filename provided. To keep everything together we'll call this analysis `foo`.
+
+```{r cqc_data}
+cqc_data(df, here::here("foo.txt"))
+```
+
+For this example, `cqc_data` has written `df` to the file `"foo.txt"` in fixed-width format and returns details about the columns in `foo.txt`. 
+
+Labels for items can be created using `cqc_label`.
+
+```{r cqc_label}
+foo_labels <- cqc_label(names(df))
+writeLines(foo_labels, here::here("foo.lab")) 
+```
+
+ConQuest command syntax can be generated using `cqc_syntax`. It requires a `name` argument which is used to provide a default link between label, data, and syntax files. The `resp_cols` argument is used to define the ConQuest responses columns which are required by the ConQuest format statment. Just providing the required arguments generates some default syntax which is compatible with ConQuest:
+
+```{r syntax_default}
+foo_syntax <- cqc_syntax(name = "foo", resp_cols = "1-9")
+writeLines(unlist(foo_syntax))
+```
+
+The default syntax file may not be useful in the current form. The commands included in the syntax file, and how they are 'linked' can be customised using the optional `cmds` and `lookup_vals` arguments.
+
+For example, let's say we are only interested in generating an item analysis and are not concerned with generating a show file, log file or system file. To do this we can customise the result of `cqc_cmds()` which is the default value provided to the `cmds` argument in `cqc_syntax`.
+
+```{r cmds}
+foo_cmds <- cqc_cmds() 
+foo_cmds <- foo_cmds[! names(foo_cmds) %in% c("show", "logfile", "put")]
+```
+
+Also, we should add a ConQuest score key given the data are raw responses and add a ConQuest codes command so that our item analysis has useful output. To make these changes we can use `cqc_defaults()` as a starting point for us to customise. The changes can then be passed to the `lookup_vals` argument in `cqc_syntax`.  
+
+```{r lookup_vals}
+foo_lookup <- cqc_defaults()
+foo_lookup$codes <- "12345"
+foo_lookup$key <- paste(answer_key$resp, collapse = "")
+```
+
+Now we can regenerate our syntax this time using our custom changes:
+
+```{r syntax_custom}
+foo_syntax <- cqc_syntax("foo", "1-9", cmds = foo_cmds, lookup_vals = foo_lookup)
+writeLines(unlist(foo_syntax)) 
+```
+
+*How `cmds` and `lookup_vals` relate*
+
+The `lookup_vals` are used to fill in the 'placeholders' (e.g. `{title}`) specified by the `cmds` argument . If a placeholder is set to `NULL` then the command is not included in the generated syntax. 
+
+After the syntax file is written out,
+
+```{r}
+writeLines(unlist(foo_syntax), here::here("foo.cqc")) 
+```
+
+the `foo` analysis syntax, label and data files can be used by ConQuest. After ConQuest has been run, the ConQuest output can be imported.
+
+For example, to read in the ConQuest item analysis file we can use `cq_itanal` (see the readme at https://github.com/markdly/conquestr for a worked example)
+
