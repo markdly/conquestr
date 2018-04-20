@@ -10,7 +10,7 @@ cqc_cmds <- function() {
   list(
     reset  = "reset;",
     title  = "title {name} {title};",
-    data   = "data {name}.txt;",
+    data   = "data {filename}.txt;",
     label  = "label << {name}.lab;",
     format = "format {group_resp_cols} responses {resp_cols};",
     codes  = "codes {codes};",
@@ -49,6 +49,7 @@ cqc_defaults <- function() {
 #'
 #' @param name A name for the analysis - this is used to link data, labels and output files
 #' @param resp_cols Columns containing item responses. For use with ConQuest format statment
+#' @param filename Name to use for the data file. Defaults to the value supplied to the \code{name} argument
 #' @param cmds A list of strings. Each string containing a ConQuest statment (and may include placeholders)
 #' @param lookup_vals A named list of strings. The name defines a 'placeholder' for use with ConQuest commands. The string is the value that will be used instead of the placeholder
 #' @return A named list. Each element contains a Conquest command. Use with `cqc_cmds` and `cqc_defaults`
@@ -59,8 +60,8 @@ cqc_defaults <- function() {
 #'
 #'
 #' @export
-cqc_syntax <- function(name, resp_cols, cmds = cqc_cmds(), lookup_vals = cqc_defaults()) {
-  lookup_vals <- c(name = name, resp_cols = resp_cols, lookup_vals)
+cqc_syntax <- function(name, resp_cols, filename = name, cmds = cqc_cmds(), lookup_vals = cqc_defaults()) {
+  lookup_vals <- c(name = name, resp_cols = resp_cols, filename = filename, lookup_vals)
   glued <- purrr::map(cmds, ~ glue::glue_data(lookup_vals, .))
   glued <- purrr::discard(glued, ~ length(.) == 0)
   glued

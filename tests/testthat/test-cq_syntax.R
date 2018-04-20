@@ -16,6 +16,12 @@ test_that("Optional args work", {
   expect_error(cqc_syntax("x", "1", cmds = "foo{bar}", lookup_vals = list(zzz = "baz")))
 })
 
+test_that("positional args work", {
+  expect_equal(paste(cqc_syntax("x", "1", "fname",
+                                list(a = "my {foo}"),
+                                list(foo = "baz"))), "my baz")
+})
+
 
 test_that("condense resp cols", {
   expect_warning(cqc_resp_cols(c(3, 2, 1)))
