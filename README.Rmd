@@ -34,9 +34,16 @@ The [WrightMap](https://CRAN.R-project.org/package=WrightMap) package also conta
 
 You can install `conquestr` from github with:
 
-```{r gh-installation, eval = FALSE}
+```{r gh-install, eval = FALSE}
 # install.packages("devtools")
 devtools::install_github("markdly/conquestr")
+```
+
+Alternatively, the latest updates are made and tested using the develop branch which can be installed with 
+
+```{r gh-dev-install, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("markdly/conquestr#develop")
 ```
 
 ## Example

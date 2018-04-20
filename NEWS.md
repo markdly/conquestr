@@ -1,3 +1,7 @@
+# conquestr 0.1.2.9000
+
+* `cqc_resp_cols` added to provide condensed item column specifications for the ConQuest format statement.
+
 # conquestr 0.1.2
 
 * Added `cqc_syntax` command for generating ConQuest syntax.  Commands currently supported are in `cqc_cmds`. Default arguments for commands are in `cqc_defaults`.
