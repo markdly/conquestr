@@ -18,3 +18,10 @@ test_that("import zero item", {
   expect_equal(nrow(zero_item), 1)
   expect_equal(trimws(zero_item$id), "item:106 (I_am_a_zero_item)")
 })
+
+test_that("item with one response code", {
+  x <- cq_itanal(system.file("extdata", "edge_case", "one_resp_code.itn", package = "conquestr"))
+  expect_equal(nrow(x), 1)
+  expect_equal(trimws(x$id), "item:25 (one_resp_code)")
+})
+
