@@ -4,12 +4,15 @@
 \alias{cqc_syntax}
 \title{Generate ConQuest syntax, with some reasonable defaults}
 \usage{
-cqc_syntax(name, resp_cols, cmds = cqc_cmds(), lookup_vals = cqc_defaults())
+cqc_syntax(name, resp_cols, filename = name, cmds = cqc_cmds(),
+  lookup_vals = cqc_defaults())
 }
 \arguments{
 \item{name}{A name for the analysis - this is used to link data, labels and output files}
 
 \item{resp_cols}{Columns containing item responses. For use with ConQuest format statment}
+
+\item{filename}{Name to use for the data file. Defaults to the value supplied to the \code{name} argument}
 
 \item{cmds}{A list of strings. Each string containing a ConQuest statment (and may include placeholders)}
 

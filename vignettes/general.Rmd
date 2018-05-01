@@ -94,10 +94,10 @@ foo_lookup$codes <- "12345"
 foo_lookup$key <- paste(answer_key$resp, collapse = "")
 ```
 
-Now we can regenerate our syntax this time using our custom changes:
+Now we can regenerate our syntax this time using our custom changes along with a custom filename:
 
 ```{r syntax_custom}
-foo_syntax <- cqc_syntax("foo", foo_resp_cols, cmds = foo_cmds, lookup_vals = foo_lookup)
+foo_syntax <- cqc_syntax("foo", foo_resp_cols, filename = "myfile", cmds = foo_cmds, lookup_vals = foo_lookup)
 writeLines(unlist(foo_syntax)) 
 ```
 
