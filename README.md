@@ -28,6 +28,13 @@ You can install `conquestr` from github with:
 devtools::install_github("markdly/conquestr")
 ```
 
+Alternatively, the latest updates are made and tested using the develop branch which can be installed with
+
+``` r
+# install.packages("devtools")
+devtools::install_github("markdly/conquestr#develop")
+```
+
 Example
 -------
 

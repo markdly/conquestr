@@ -15,3 +15,18 @@ test_that("Optional args work", {
   # expect an error if there's a placeholder we haven't provide a value for
   expect_error(cqc_syntax("x", "1", cmds = "foo{bar}", lookup_vals = list(zzz = "baz")))
 })
+
+test_that("positional args work", {
+  expect_equal(paste(cqc_syntax("x", "1", "fname",
+                                list(a = "my {foo}"),
+                                list(foo = "baz"))), "my baz")
+})
+
+
+test_that("condense resp cols", {
+  expect_warning(cqc_resp_cols(c(3, 2, 1)))
+  expect_equal(suppressWarnings(cqc_resp_cols(c(3, 2, 1))), "3, 2, 1")
+  expect_error(cqc_resp_cols(c(1, 1)))
+  expect_equal(cqc_resp_cols(c(1,3,4,6)), "1, 3-4, 6")
+  expect_equal(cqc_resp_cols(c(1,2,3,4,5,6)), "1-6")
+})

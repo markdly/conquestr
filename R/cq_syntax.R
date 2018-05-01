@@ -10,7 +10,7 @@ cqc_cmds <- function() {
   list(
     reset  = "reset;",
     title  = "title {name} {title};",
-    data   = "data {name}.txt;",
+    data   = "data {filename}.txt;",
     format = "format {group_resp_cols} responses {resp_cols};",
     label  = "label << {name}.lab;",
     codes  = "codes {codes};",
@@ -49,6 +49,7 @@ cqc_defaults <- function() {
 #'
 #' @param name A name for the analysis - this is used to link data, labels and output files
 #' @param resp_cols Columns containing item responses. For use with ConQuest format statment
+#' @param filename Name to use for the data file. Defaults to the value supplied to the \code{name} argument
 #' @param cmds A list of strings. Each string containing a ConQuest statment (and may include placeholders)
 #' @param lookup_vals A named list of strings. The name defines a 'placeholder' for use with ConQuest commands. The string is the value that will be used instead of the placeholder
 #' @return A named list. Each element contains a Conquest command. Use with `cqc_cmds` and `cqc_defaults`
@@ -59,8 +60,8 @@ cqc_defaults <- function() {
 #'
 #'
 #' @export
-cqc_syntax <- function(name, resp_cols, cmds = cqc_cmds(), lookup_vals = cqc_defaults()) {
-  lookup_vals <- c(name = name, resp_cols = resp_cols, lookup_vals)
+cqc_syntax <- function(name, resp_cols, filename = name, cmds = cqc_cmds(), lookup_vals = cqc_defaults()) {
+  lookup_vals <- c(name = name, resp_cols = resp_cols, filename = filename, lookup_vals)
   glued <- purrr::map(cmds, ~ glue::glue_data(lookup_vals, .))
   glued <- purrr::discard(glued, ~ length(.) == 0)
   glued
@@ -117,3 +118,43 @@ cqc_data <- function(x, fname, item_names = names(x), extras = NULL) {
   if(max(specs$width[specs$colname %in% item_names]) > 1) warning("some items had width greater than one")
   specs
 }
+
+
+
+#' Condense ConQuest response columns syntax
+#'
+#' Designed to work with \code{cqc_data}. This is a convenience functions
+#' designed for use when a subset of items are being analysed that are contained
+#' in the ConQuest data file.
+#'
+#' @param x takes an integer vector (or attempts to coerce to one) which
+#'   represents column positions for ConQuest items in a fixed-width text file
+#'   used for analysis.
+#' @return a string containing response columns for use with the ConQuest format statement
+#'
+#' @examples
+#' x <- c(1,3,4,5,7,9,10,11)
+#' cqc_resp_cols(x)
+#'
+#' @export
+cqc_resp_cols <- function(x) {
+  e1 <- simpleError("Response columns were not unique.")
+  w1 <- simpleWarning("Response columns were not in ascending order and could not be condensed.")
+
+  if(length(unique(x)) != length(x)) { stop(e1) }
+
+  diffs <- c(1, diff(x))
+  if(any(diffs < 1)) {
+    warning(w1)
+    return(paste0(x, collapse=", "))
+  }
+
+  start_indexes <- c(1, which(diffs > 1))
+  end_indexes <- c(start_indexes - 1, length(x))[-1]
+  dashed <- paste(x[start_indexes], x[end_indexes], sep="-")
+  # remove the dash when the start and end index are the same
+  indexes_diff = end_indexes - start_indexes
+  dashed[indexes_diff == 0] <- paste(x[start_indexes[indexes_diff == 0]])
+  return(paste0(dashed, collapse=", "))
+}
+

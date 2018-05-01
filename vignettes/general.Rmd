@@ -16,11 +16,16 @@ knitr::opts_chunk$set(
 )
 ```
 
-This vignette is intended to walkthrough the use of existing `conquestr` functions. 
+This vignette is intended to walkthrough the use of existing `conquestr` functions.
 
 ```{r installing, eval=FALSE}
 # install.packages("devtools")
 devtools::install_github("markdly/conquestr")
+```
+
+```{r housekeeping}
+# setup a temporary directory for the examples
+mydir <- tempdir()
 ```
 
 
@@ -51,7 +56,8 @@ answer_key
 The next step is to take the data we want to analyse and convert it into a format ConQuest can use. We can do this by using the `cqc_data` function which writes out a dataframe of responses in fixed-width text format to a filename provided. To keep everything together we'll call this analysis `foo`.
 
 ```{r cqc_data}
-cqc_data(df, here::here("foo.txt"))
+data_specs <- cqc_data(df, file.path(mydir, "foo.txt"))
+data_specs
 ```
 
 For this example, `cqc_data` has written `df` to the file `"foo.txt"` in fixed-width format and returns details about the columns in `foo.txt`. 
@@ -60,13 +66,14 @@ Labels for items can be created using `cqc_label`.
 
 ```{r cqc_label}
 foo_labels <- cqc_label(names(df))
-writeLines(foo_labels, here::here("foo.lab")) 
+writeLines(foo_labels, file.path(mydir, "foo.lab")) 
 ```
 
-ConQuest command syntax can be generated using `cqc_syntax`. It requires a `name` argument which is used to provide a default link between label, data, and syntax files. The `resp_cols` argument is used to define the ConQuest responses columns which are required by the ConQuest format statment. Just providing the required arguments generates some default syntax which is compatible with ConQuest:
+ConQuest command syntax can be generated using `cqc_syntax`. It requires a `name` argument which is used to provide a default link between label, data, and syntax files. The `resp_cols` argument is used to define the ConQuest responses columns which are required by the ConQuest format statment. The `cqc_resp_cols` function can work with the output from the `cqc_data` function to supply an appropriate argument to `resp_cols`. Just providing the required arguments generates some default syntax which is compatible with ConQuest:
 
 ```{r syntax_default}
-foo_syntax <- cqc_syntax(name = "foo", resp_cols = "1-9")
+foo_resp_cols <- cqc_resp_cols(data_specs$position)
+foo_syntax <- cqc_syntax(name = "foo", resp_cols = foo_resp_cols)
 writeLines(unlist(foo_syntax))
 ```
 
@@ -87,10 +94,10 @@ foo_lookup$codes <- "12345"
 foo_lookup$key <- paste(answer_key$resp, collapse = "")
 ```
 
-Now we can regenerate our syntax this time using our custom changes:
+Now we can regenerate our syntax this time using our custom changes along with a custom filename:
 
 ```{r syntax_custom}
-foo_syntax <- cqc_syntax("foo", "1-9", cmds = foo_cmds, lookup_vals = foo_lookup)
+foo_syntax <- cqc_syntax("foo", foo_resp_cols, filename = "myfile", cmds = foo_cmds, lookup_vals = foo_lookup)
 writeLines(unlist(foo_syntax)) 
 ```
 
@@ -101,7 +108,7 @@ The `lookup_vals` are used to fill in the 'placeholders' (e.g. `{title}`) specif
 After the syntax file is written out,
 
 ```{r}
-writeLines(unlist(foo_syntax), here::here("foo.cqc")) 
+writeLines(unlist(foo_syntax), file.path(mydir, "foo.cqc")) 
 ```
 
 the `foo` analysis syntax, label and data files can be used by ConQuest. After ConQuest has been run, the ConQuest output can be imported.
