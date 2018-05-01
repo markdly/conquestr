@@ -1,0 +1,35 @@
+=================================================================================
+ex1                                                        Tue Nov 21 13:58 2017
+GENERALISED ITEM ANALYSIS
+=================================================================================
+Item 111
+--------
+item:111 (difficult_item)
+Cases for this item    208   Discrimination  0.25
+Item Threshold(s):   -32.00   Weighted MNSQ _BIG_
+Item Delta(s):       -37.01
+------------------------------------------------------------------------------
+ Label    Score     Count   % of tot  Pt Bis     t  (p)   PV1Avg:1 PV1 SD:1
+------------------------------------------------------------------------------
+   A       0.00        5       2.40   -0.25    -3.78(.000) -1.14     0.74
+   C       1.00      203      97.60    0.25     3.78(.000)  0.66     0.96
+==============================================================================
+
+------------------------------------------------------------------------------
+The following traditional statistics are only meaningful for complete
+designs and when the amount of missing data is minimal.
+In this analysis  0.00%  of the data are missing.
+
+The following results are scaled to assume that a single response
+was provided for each item.
+
+N                               1475
+Mean                            5.15
+Standard Deviation              3.01
+Variance                        9.03
+Skewness                       -0.23
+Kurtosis                       -1.35
+Standard error of mean          0.08
+Standard error of measurement   1.10
+Coefficient Alpha               0.87
+==============================================================================

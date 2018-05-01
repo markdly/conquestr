@@ -25,3 +25,12 @@ test_that("item with one response code", {
   expect_equal(trimws(x$id), "item:25 (one_resp_code)")
 })
 
+test_that("very difficult item with extreme logit", {
+  x <- suppressWarnings(cq_itanal(system.file("extdata", "edge_case", "difficult_item.itn", package = "conquestr")))
+  expect_warning(cq_itanal(system.file("extdata", "edge_case", "minus32_item.itn", package = "conquestr")))
+  expect_equal(nrow(x), 1)
+  expect_equal(trimws(x$id), "item:111 (difficult_item)")
+  expect_equal(x$delta, -37.01)
+  expect_equal(x$thrsh, -32.00)
+  expect_equal(x$mnsq, NA_real_)
+})
