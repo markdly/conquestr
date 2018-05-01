@@ -1,0 +1,35 @@
+=================================================================================
+ex1                                                        Tue Nov 21 13:58 2017
+GENERALISED ITEM ANALYSIS
+=================================================================================
+Item 106
+--------
+item:106 (I_am_a_zero_item)
+Cases for this item    357   Discrimination NA
+Item Threshold(s): NOT AVAILABLE   Weighted MNSQ: NOT AVAILABLE
+Item Delta(s): NOT AVAILABLE
+------------------------------------------------------------------------------
+ Label    Score     Count   % of tot  Pt Bis     t  (p)   PV1Avg:1 PV1 SD:1
+------------------------------------------------------------------------------
+   0       0.00      356      99.72    0.05     0.95(.341) -0.27     0.98
+   9       0.00        1       0.28   -0.05    -0.95(.341) -0.92     0.00
+==============================================================================
+
+------------------------------------------------------------------------------
+The following traditional statistics are only meaningful for complete
+designs and when the amount of missing data is minimal.
+In this analysis  0.00%  of the data are missing.
+
+The following results are scaled to assume that a single response
+was provided for each item.
+
+N                               1475
+Mean                            5.15
+Standard Deviation              3.01
+Variance                        9.03
+Skewness                       -0.23
+Kurtosis                       -1.35
+Standard error of mean          0.08
+Standard error of measurement   1.10
+Coefficient Alpha               0.87
+==============================================================================

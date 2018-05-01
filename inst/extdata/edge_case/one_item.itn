@@ -1,0 +1,39 @@
+=================================================================================
+ex1                                                        Tue Nov 21 13:58 2017
+GENERALISED ITEM ANALYSIS
+=================================================================================
+Item 8
+------
+item:8 (q8)
+Cases for this item   1475   Discrimination  0.57
+Item Threshold(s):    -0.10   Weighted MNSQ   1.11
+Item Delta(s):        -0.10
+------------------------------------------------------------------------------
+ Label    Score     Count   % of tot  Pt Bis     t  (p)   PV1Avg:1 PV1 SD:1
+------------------------------------------------------------------------------
+   1       0.00       45       3.05   -0.14    -5.50(.000) -1.45     2.17
+   2       0.00       50       3.39   -0.05    -2.08(.038) -0.27     1.32
+   3       1.00      872      59.12    0.57    26.34(.000)  1.68     1.75
+   4       0.00       47       3.19   -0.01    -0.56(.575)  0.12     1.35
+   5       0.00      169      11.46    0.01     0.20(.839)  0.15     1.62
+   9       0.00      292      19.80   -0.61   -29.56(.000) -1.93     1.29
+==============================================================================
+
+------------------------------------------------------------------------------
+The following traditional statistics are only meaningful for complete
+designs and when the amount of missing data is minimal.
+In this analysis  0.00%  of the data are missing.
+
+The following results are scaled to assume that a single response
+was provided for each item.
+
+N                               1475
+Mean                            5.15
+Standard Deviation              3.01
+Variance                        9.03
+Skewness                       -0.23
+Kurtosis                       -1.35
+Standard error of mean          0.08
+Standard error of measurement   1.10
+Coefficient Alpha               0.87
+==============================================================================

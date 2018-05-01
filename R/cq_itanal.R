@@ -51,15 +51,15 @@ cq_read_itanal <- function(fname) {
 
   # response stats
   resp_col_names <- c("label", "score", "count", "pct_tot", "pt_bis", "t", "p",
-                      "blank", "pv_avg", "pv_sd")
+                      "pv_avg", "pv_sd")
+
   txt <- txt %>%
     dplyr::mutate(resp_stat = purrr::map(.data$resp_stat, function(x) {
       x <- x %>%
         stringr::str_trim() %>%
-        stringr::str_split("\\s+|\\(|\\)") %>%
+        stringr::str_split("[\\s\\(\\)]+") %>%
         purrr::map(setNames, resp_col_names) %>%
-        purrr::map_dfr(as.list) %>%
-        dplyr::select(-.data$blank)
+        purrr::map_dfr(as.list)
       x
     }))
 
