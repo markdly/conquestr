@@ -14,9 +14,10 @@ test_that("import one item", {
 })
 
 test_that("import zero item", {
-  zero_item <- cq_itanal(system.file("extdata", "edge_case", "zero_item.itn", package = "conquestr"))
-  expect_equal(nrow(zero_item), 1)
-  expect_equal(trimws(zero_item$id), "item:106 (I_am_a_zero_item)")
+  x <- suppressWarnings(cq_itanal(system.file("extdata", "edge_case", "zero_item.itn", package = "conquestr")))
+  expect_warning(cq_itanal(system.file("extdata", "edge_case", "zero_item.itn", package = "conquestr")))
+  expect_equal(nrow(x), 1)
+  expect_equal(trimws(x$id), "item:106 (I_am_a_zero_item)")
 })
 
 test_that("item with one response code", {
@@ -34,4 +35,21 @@ test_that("very difficult item with extreme logit", {
   expect_equal(x$delta, -37.01)
   expect_equal(x$thrsh, -32.00)
   expect_equal(x$mnsq, NA_real_)
+})
+
+test_that("item rest cor version imports correctly", {
+  x <- cq_itanal(system.file("extdata", "edge_case", "item_rest_corr_version.itn", package = "conquestr"))
+  expect_equal(nrow(x), 1)
+  expect_equal(trimws(x$id), "item:120 (120)")
+  expect_equal(x$delta, 2.74)
+  expect_equal(x$thrsh, 2.74)
+  expect_equal(x$mnsq, NA_real_)
+  expect_equal(x$disc, 0.25)
+})
+
+test_that("thresholds still read correctly even if mnsq is not requested (fit=no)", {
+  x <- cq_itanal(system.file("extdata", "no_fit.itn", package = "conquestr"))
+  expect_equal(nrow(x), 9)
+  expect_equal(x$thrsh[1], 0.39)
+  expect_equal(x$mnsq[1], NA_real_)
 })
