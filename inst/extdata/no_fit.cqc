@@ -1,0 +1,13 @@
+/*  output when fit=no  */
+reset;
+Title ex1;   
+data ex1.txt;
+format pid 11-15 responses 1-9;
+codes 1,2,3,4,5,9;
+label << ex1.lab;
+key 252552444 ! 1;
+model item;
+estimate ! nodes = 30, fit=no;
+show !estimate=latent >> no_fit.shw;
+itanal >> no_fit.itn;
+
