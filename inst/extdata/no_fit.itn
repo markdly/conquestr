@@ -1,11 +1,12 @@
-=================================================================================
-ex1                                                        Fri May 11 07:10 2018
+=================================================================================
+ex1                                                        Fri May 11 15:33 2018
 GENERALISED ITEM ANALYSIS
+Group: All Students
 =================================================================================
 Item 1
 ------
 item:1 (q1)                                                                     
-Cases for this item   1209   Discrimination  0.64
+Cases for this item    1209   Item-Rest Cor.  0.64
 Item Threshold(s):     0.39   
 Item Delta(s):         0.39
 ------------------------------------------------------------------------------
@@ -22,7 +23,7 @@ Item Delta(s):         0.39
 Item 2
 ------
 item:2 (q2)                                                                     
-Cases for this item   1209   Discrimination  0.57
+Cases for this item    1209   Item-Rest Cor.  0.57
 Item Threshold(s):    -1.49   
 Item Delta(s):        -1.48
 ------------------------------------------------------------------------------
@@ -39,7 +40,7 @@ Item Delta(s):        -1.48
 Item 3
 ------
 item:3 (q3)                                                                     
-Cases for this item   1209   Discrimination  0.19
+Cases for this item    1209   Item-Rest Cor.  0.19
 Item Threshold(s):    -1.14   
 Item Delta(s):        -1.14
 ------------------------------------------------------------------------------
@@ -56,7 +57,7 @@ Item Delta(s):        -1.14
 Item 4
 ------
 item:4 (q4)                                                                     
-Cases for this item   1209   Discrimination  0.43
+Cases for this item    1209   Item-Rest Cor.  0.43
 Item Threshold(s):    -0.09   
 Item Delta(s):        -0.09
 ------------------------------------------------------------------------------
@@ -73,7 +74,7 @@ Item Delta(s):        -0.09
 Item 5
 ------
 item:5 (q5)                                                                     
-Cases for this item   1209   Discrimination  0.63
+Cases for this item    1209   Item-Rest Cor.  0.63
 Item Threshold(s):     0.90   
 Item Delta(s):         0.90
 ------------------------------------------------------------------------------
@@ -90,7 +91,7 @@ Item Delta(s):         0.90
 Item 6
 ------
 item:6 (q6)                                                                     
-Cases for this item   1209   Discrimination  0.69
+Cases for this item    1209   Item-Rest Cor.  0.69
 Item Threshold(s):     0.56   
 Item Delta(s):         0.56
 ------------------------------------------------------------------------------
@@ -107,7 +108,7 @@ Item Delta(s):         0.56
 Item 7
 ------
 item:7 (q7)                                                                     
-Cases for this item   1209   Discrimination  0.68
+Cases for this item    1209   Item-Rest Cor.  0.68
 Item Threshold(s):     0.22   
 Item Delta(s):         0.22
 ------------------------------------------------------------------------------
@@ -124,7 +125,7 @@ Item Delta(s):         0.22
 Item 8
 ------
 item:8 (q8)                                                                     
-Cases for this item   1209   Discrimination  0.61
+Cases for this item    1209   Item-Rest Cor.  0.61
 Item Threshold(s):    -0.11   
 Item Delta(s):        -0.11
 ------------------------------------------------------------------------------
@@ -141,7 +142,7 @@ Item Delta(s):        -0.11
 Item 9
 ------
 item:9 (q9)                                                                     
-Cases for this item   1209   Discrimination  0.66
+Cases for this item    1209   Item-Rest Cor.  0.66
 Item Threshold(s):     0.74   
 Item Delta(s):         0.74
 ------------------------------------------------------------------------------
