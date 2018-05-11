@@ -37,12 +37,13 @@ cq_read_itanal <- function(fname) {
   txt <- txt %>%
     tidyr::extract(
       .data$case_disc, c("case", "disc"),
-      "Cases for this item +([0-9]+) +Discrimination +(-?[0-9]+\\.[0-9]+)$")
+      "Cases for this item +([0-9]+) +(?:Discrimination|Item-Rest Cor.) +(-?[0-9]+\\.[0-9]+)$")
 
   txt <- txt %>%
     tidyr::extract(
       .data$threshold, c("thrsh", "mnsq"),
-      "Item Threshold\\(s\\)\\: (.+) Weighted MNSQ (.+)$")
+      "Item Threshold\\(s\\)\\:\\s+(\\S+)(.+)$") %>%
+    dplyr::mutate(mnsq = stringr::str_remove(.data$mnsq, "Weighted MNSQ"))
 
   txt <- txt %>%
     tidyr::extract(

@@ -3,12 +3,17 @@
 #' @param fname A file path to an existing ConQuest show file (e.g.
 #'   'myfile.shw'). Can take other input as for \code{readr::read_file}
 #'
+#' @param fit A logical value indicating if the show file has fit statistics
+#'   included or not. This only affects warnings generated. It is convenient
+#'   when no fit statistics have been requested as the default value \code{TRUE}
+#'   generates warnings that data is missing.
+#'
 #' @examples
 #' fname <- cq_example(display = FALSE, example_name = "ex1.shw")
 #' df <- cq_show(fname)
 #'
 #' @export
-cq_show <- function(fname) {
+cq_show <- function(fname, fit = c(TRUE, FALSE)) {
 
   sections <- paste(
     "SUMMARY OF THE ESTIMATION",
@@ -53,7 +58,7 @@ cq_show <- function(fname) {
   # one column for each stat
   txt <- txt %>%
     mutate(stats = trimws(stats)) %>%
-    tidyr::separate(stats, param_stats_cols, "[\\s\\(\\),\\*]+", convert = TRUE)
+    tidyr::separate(stats, param_stats_cols, "[\\s\\(\\),\\*]+", convert = TRUE, fill = ifelse(fit, "warn", "right"))
 
   txt
 }

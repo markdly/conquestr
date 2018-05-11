@@ -4,11 +4,16 @@
 \alias{cq_show}
 \title{Read in ConQuest show output file}
 \usage{
-cq_show(fname)
+cq_show(fname, fit = c(TRUE, FALSE))
 }
 \arguments{
 \item{fname}{A file path to an existing ConQuest show file (e.g.
 'myfile.shw'). Can take other input as for \code{readr::read_file}}
+
+\item{fit}{A logical value indicating if the show file has fit statistics
+included or not. This only affects warnings generated. It is convenient
+when no fit statistics have been requested as the default value \code{TRUE}
+generates warnings that data is missing.}
 }
 \description{
 Read in ConQuest show output file

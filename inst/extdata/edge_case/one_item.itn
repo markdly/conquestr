@@ -1,7 +1,3 @@
-=================================================================================
-ex1                                                        Tue Nov 21 13:58 2017
-GENERALISED ITEM ANALYSIS
-=================================================================================
 Item 8
 ------
 item:8 (q8)
@@ -20,20 +16,3 @@ Item Delta(s):        -0.10
 ==============================================================================
 
 ------------------------------------------------------------------------------
-The following traditional statistics are only meaningful for complete
-designs and when the amount of missing data is minimal.
-In this analysis  0.00%  of the data are missing.
-
-The following results are scaled to assume that a single response
-was provided for each item.
-
-N                               1475
-Mean                            5.15
-Standard Deviation              3.01
-Variance                        9.03
-Skewness                       -0.23
-Kurtosis                       -1.35
-Standard error of mean          0.08
-Standard error of measurement   1.10
-Coefficient Alpha               0.87
-==============================================================================
