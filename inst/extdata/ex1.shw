@@ -1,5 +1,5 @@
 ================================================================================
-ex1                                                        Tue Nov 21 13:58 2017
+ex1                                                        Fri May 11 15:18 2018
 SUMMARY OF THE ESTIMATION
 ================================================================================
 
@@ -8,14 +8,15 @@ Assumed population distribution was: Gaussian
 Constraint was: DEFAULT
 The Data File: ex1.txt
 The format:  pid 11-15 responses 1-9
+No case weights
 The regression model:
 Grouping Variables:
 The item model: item
 Slopes are fixed
-Sample size: 1475
-Final Deviance:    13406.63563
+Sample size: 1209
+Final Deviance:    11626.64988
 Total number of estimated parameters: 10
-The number of iterations: 25
+The number of iterations: 23
 Termination criteria:  Max iterations=1000, Parameter Change= 0.00010
                        Deviance Change= 0.00010
 Iterations terminated because the deviance convergence criteria was reached
@@ -27,10 +28,10 @@ Maximum number of iterations without a deviance improvement: 100
 Maximum number of Newton steps in M-step: 10
 Value for obtaining finite MLEs for zero/perfects:    0.30000
 
-key 1 scored as 1: 342333333
+key 1 scored as 1: 252552444
 ================================================================================
 ================================================================================
-ex1                                                        Tue Nov 21 13:58 2017
+ex1                                                        Fri May 11 15:18 2018
 TABLES OF RESPONSE MODEL PARAMETER ESTIMATES
 ================================================================================
 TERM 1: item
@@ -39,23 +40,23 @@ TERM 1: item
 ---------------                        -----------------------   -----------------------
      item           ESTIMATE  ERROR^   MNSQ       CI        T    MNSQ       CI        T
 --------------------------------------------------------------------------------------------------------------
- 1   q1              -1.361   0.052    2.25 ( 0.93, 1.07) 25.3   1.25 ( 0.92, 1.08)  5.6                      
- 2   q2              -1.954   0.054    0.85 ( 0.93, 1.07) -4.2   0.89 ( 0.91, 1.09) -2.5                      
- 3   q3               0.576   0.050    1.02 ( 0.93, 1.07)  0.5   1.01 ( 0.93, 1.07)  0.3                      
- 4   q4               0.630   0.050    0.51 ( 0.93, 1.07)-16.4   0.67 ( 0.93, 1.07)-10.0                      
- 5   q5               0.252   0.050    2.83 ( 0.93, 1.07) 33.8   1.84 ( 0.93, 1.07) 18.3                      
- 6   q6               0.434   0.050    0.53 ( 0.93, 1.07)-15.4   0.67 ( 0.93, 1.07)-10.2                      
- 7   q7               0.581   0.050    0.61 ( 0.93, 1.07)-12.3   0.74 ( 0.93, 1.07) -7.7                      
- 8   q8              -0.096   0.050    1.21 ( 0.93, 1.07)  5.3   1.11 ( 0.93, 1.07)  2.8                      
- 9   q9               0.939*  0.143    0.66 ( 0.93, 1.07)-10.5   0.75 ( 0.93, 1.07) -7.4                      
+ 1   q1               0.390   0.072    0.74 ( 0.92, 1.08) -7.0   0.90 ( 0.93, 1.07) -2.9                      
+ 2   q2              -1.485   0.076    0.86 ( 0.92, 1.08) -3.5   0.91 ( 0.92, 1.08) -2.4                      
+ 3   q3              -1.138   0.073    2.39 ( 0.92, 1.08) 24.9   1.66 ( 0.92, 1.08) 14.3                      
+ 4   q4              -0.089   0.070    1.35 ( 0.92, 1.08)  7.9   1.27 ( 0.93, 1.07)  6.7                      
+ 5   q5               0.901   0.075    0.71 ( 0.92, 1.08) -7.9   0.88 ( 0.92, 1.08) -3.1                      
+ 6   q6               0.558   0.073    0.63 ( 0.92, 1.08)-10.5   0.80 ( 0.93, 1.07) -5.7                      
+ 7   q7               0.225   0.071    0.70 ( 0.92, 1.08) -8.1   0.84 ( 0.93, 1.07) -4.7                      
+ 8   q8              -0.105   0.070    0.90 ( 0.92, 1.08) -2.5   0.94 ( 0.93, 1.07) -1.6                      
+ 9   q9               0.743*  0.074    0.64 ( 0.92, 1.08)-10.0   0.83 ( 0.92, 1.08) -4.8                      
 --------------------------------------------------------------------------------
 An asterisk next to a parameter estimate indicates that it is constrained
-Separation Reliability =  0.997
-Chi-square test of parameter equality =    2526.69,  df = 8,  Sig Level = 0.000
-^ Quick standard errors have been used
+Separation Reliability =  0.992
+Chi-square test of parameter equality =     871.53,  df = 8,  Sig Level = 0.000
+^ Empirical standard errors have been used
 ================================================================================
 ================================================================================
-ex1                                                        Tue Nov 21 13:58 2017
+ex1                                                        Fri May 11 15:18 2018
 TABLES OF POPULATION MODEL PARAMETER ESTIMATES
 ================================================================================
 REGRESSION COEFFICIENTS
@@ -64,7 +65,7 @@ REGRESSION COEFFICIENTS
 
 Regression Variable
 
-CONSTANT                   0.560 ( 0.059)      
+CONSTANT                  -0.381 ( 0.064)      
 -----------------------------------------------
 An asterisk next to a parameter estimate indicates that it is constrained
 ===============================================
@@ -74,9 +75,9 @@ COVARIANCE/CORRELATION MATRIX
 
 Dimension
 
-Dimension 1                                
+Dimension_1                                
 -------------------------------------------
-Variance                   5.085  ( 0.187) 
+Variance                   4.031  ( 0.257) 
 -------------------------------------------
 An asterisk next to a parameter estimate indicates that it is constrained
 
@@ -85,14 +86,14 @@ An asterisk next to a parameter estimate indicates that it is constrained
 RELIABILITY COEFFICIENTS
 ------------------------
                         
-Dimension: (Dimension 1)                                                        
+Dimension: (Dimension_1)                                                        
 -----------------------
  MLE Person separation RELIABILITY:  Unavailable                                
  WLE Person separation RELIABILITY:  Unavailable                                
- EAP/PV RELIABILITY:                  0.825                                     
+ EAP/PV RELIABILITY:                  0.805                                     
 ------------------------
 ================================================================================
-ex1                                                        Tue Nov 21 13:58 2017
+ex1                                                        Fri May 11 15:18 2018
 MAP OF LATENT DISTRIBUTIONS AND RESPONSE MODEL PARAMETER ESTIMATES
 ================================================================================
                                              Terms in the Model (excl Step terms)
@@ -100,71 +101,71 @@ MAP OF LATENT DISTRIBUTIONS AND RESPONSE MODEL PARAMETER ESTIMATES
                                                                +item
 ---------------------------------------------------------------------------------------
                                               |                                       |
-   9                                          |                                       |
-                                              |                                       |
-                                              |                                       |
-                                              |                                       |
-   8                                          |                                       |
-                                              |                                       |
                                               |                                       |
    7                                          |                                       |
+                                              |                                       |
+                                              |                                       |
+                                              |                                       |
+   6                                          |                                       |
+                                              |                                       |
                                              X|                                       |
+   5                                        XX|                                       |
                                              X|                                       |
-   6                                         X|                                       |
-                                           XXX|                                       |
-                                           XXX|                                       |
+                                              |                                       |
+                                         XXXXX|                                       |
+   4                                        XX|                                       |
                                         XXXXXX|                                       |
-   5                                    XXXXXX|                                       |
-                                       XXXXXXX|                                       |
-                                      XXXXXXXX|                                       |
-   4                                XXXXXXXXXX|                                       |
-                                XXXXXXXXXXXXXX|                                       |
+                                        XXXXXX|                                       |
+                                        XXXXXX|                                       |
+   3                                 XXXXXXXXX|                                       |
+                                     XXXXXXXXX|                                       |
+                              XXXXXXXXXXXXXXXX|                                       |
                              XXXXXXXXXXXXXXXXX|                                       |
-   3                     XXXXXXXXXXXXXXXXXXXXX|                                       |
-               XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|                                       |
-                     XXXXXXXXXXXXXXXXXXXXXXXXX|                                       |
+   2                      XXXXXXXXXXXXXXXXXXXX|                                       |
                   XXXXXXXXXXXXXXXXXXXXXXXXXXXX|                                       |
-   2           XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|                                       |
+                       XXXXXXXXXXXXXXXXXXXXXXX|                                       |
+   1                 XXXXXXXXXXXXXXXXXXXXXXXXX|                                       |
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|5 9                                    |
+            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|6                                      |
+         XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|1 7                                    |
+   0  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|4 8                                    |
             XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|                                       |
-        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|                                       |
-   1  XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|9                                      |
-              XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|3 4 7                                  |
-              XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|6                                      |
-   0              XXXXXXXXXXXXXXXXXXXXXXXXXXXX|5                                      |
-            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|8                                      |
-           XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|                                       |
-      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|                                       |
-  -1            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|                                       |
-               XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|1                                      |
-                            XXXXXXXXXXXXXXXXXX|                                       |
-  -2                     XXXXXXXXXXXXXXXXXXXXX|2                                      |
-                          XXXXXXXXXXXXXXXXXXXX|                                       |
-                                 XXXXXXXXXXXXX|                                       |
-  -3                                XXXXXXXXXX|                                       |
+          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|                                       |
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|                                       |
+  -1      XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|3                                      |
+          XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|                                       |
+           XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|2                                      |
+                XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|                                       |
+  -2            XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX|                                       |
+                             XXXXXXXXXXXXXXXXX|                                       |
+                              XXXXXXXXXXXXXXXX|                                       |
+  -3                        XXXXXXXXXXXXXXXXXX|                                       |
+                                XXXXXXXXXXXXXX|                                       |
+                                      XXXXXXXX|                                       |
                                     XXXXXXXXXX|                                       |
-                                       XXXXXXX|                                       |
+  -4                                  XXXXXXXX|                                       |
                                           XXXX|                                       |
-  -4                                       XXX|                                       |
+                                          XXXX|                                       |
                                             XX|                                       |
-                                           XXX|                                       |
-  -5                                        XX|                                       |
-                                            XX|                                       |
+  -5                                     XXXXX|                                       |
                                              X|                                       |
+                                            XX|                                       |
   -6                                         X|                                       |
-                                              |                                       |
-                                              |                                       |
+                                             X|                                       |
+                                             X|                                       |
                                               |                                       |
   -7                                          |                                       |
                                               |                                       |
+                                             X|                                       |
                                               |                                       |
   -8                                          |                                       |
                                               |                                       |
 =======================================================================================
-Each 'X' represents   2.1 cases
+Each 'X' represents 1.7 cases
 
 =======================================================================================
 ================================================================================
-ex1                                                        Tue Nov 21 13:58 2017
+ex1                                                        Fri May 11 15:18 2018
 MAP OF LATENT DISTRIBUTIONS AND THRESHOLDS
 ================================================================================
                                Generalised-Item Thresholds
@@ -172,56 +173,55 @@ MAP OF LATENT DISTRIBUTIONS AND THRESHOLDS
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
                 |
-   9            |
-                |
-                |
-                |
-   8            |
-                |
                 |
    7            |
                 |
                 |
+                |
    6            |
+                |
+                |
+   5            |
+                |
+                |
                X|
+   4           X|
                X|
               XX|
-   5           X|
               XX|
+   3          XX|
               XX|
-   4          XX|
             XXXX|
             XXXX|
-   3       XXXXX|
-        XXXXXXXX|
-          XXXXXX|
+   2       XXXXX|
          XXXXXXX|
-   2    XXXXXXXX|
-       XXXXXXXXX|
-      XXXXXXXXXX|
-   1  XXXXXXXXXX|9
-        XXXXXXXX|3 4 7
+          XXXXXX|
+   1      XXXXXX|
+         XXXXXXX|5 9
         XXXXXXXX|6
-   0     XXXXXXX|5
-        XXXXXXXX|8
+       XXXXXXXXX|1 7
+   0  XXXXXXXXXX|4 8
+        XXXXXXXX|
        XXXXXXXXX|
-      XXXXXXXXXX|
-  -1    XXXXXXXX|
-        XXXXXXXX|1
+        XXXXXXXX|
+  -1   XXXXXXXXX|3
+       XXXXXXXXX|
+       XXXXXXXXX|2
+        XXXXXXXX|
+  -2    XXXXXXXX|
             XXXX|
-  -2       XXXXX|2
-           XXXXX|
-             XXX|
-  -3          XX|
-             XXX|
+            XXXX|
+  -3       XXXXX|
+            XXXX|
               XX|
+             XXX|
+  -4          XX|
                X|
-  -4           X|
                X|
-               X|
-  -5            |
                 |
+  -5           X|
                 |
+               X|
   -6            |
                 |
                 |
@@ -229,10 +229,11 @@ MAP OF LATENT DISTRIBUTIONS AND THRESHOLDS
   -7            |
                 |
                 |
+                |
   -8            |
                 |
 ============================================================================================================================================================================================================================================================================================================
-Each 'X' represents   8.3 cases
+Each 'X' represents 6.9 cases
 The labels for thresholds show the levels of
     item, and category, respectively
 

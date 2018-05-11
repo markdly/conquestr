@@ -13,7 +13,7 @@
 
  model item;
 
- estimate;
+ estimate ! nodes = 30;
 Original Sufficient Statistics
 Parameter No.              Sufficient Statistic
       1                       -60.00000
@@ -36,377 +36,516 @@ Parameter No.              Sufficient Statistic
       8                      -148.00000
 .......................................................
 Iteration =    1
-   Deviance=     12908.108 
+   Deviance=     12908.114 
    Covariance 
-      1.43208
+      1.43209
    Correlation 
       1.00000
    Regression Coefficients 
-     -0.17734
+     -0.17735
    Item Parameters 
          1  -0.14279
-         2  -0.89419
+         2  -0.89421
          3  -0.34980
-         4   0.30767
-         5   0.60630
+         4   0.30768
+         5   0.60631
          6   0.16068
-         7  -0.05938
-         8  -0.17470
-Maximum change in item parameters was   -0.89419 for parameter   2 
-Maximum change in regression parameters was   -0.17734
-Maximum change in covariance parameters was    0.43208
+         7  -0.05939
+         8  -0.17471
+Maximum change in item parameters was   -0.89421 for parameter   2 
+Maximum change in regression parameters was   -0.17735
+Maximum change in covariance parameters was    0.43209
 .......................................................
 Iteration =    2
-   Deviance=     12124.345 
+   Deviance=     12124.359 
    Covariance 
-      1.94626
+      1.94636
    Correlation 
       1.00000
    Regression Coefficients 
      -0.26652
    Item Parameters 
-         1   0.04719
-         2  -1.27403
-         3  -0.68004
-         4   0.28493
+         1   0.04720
+         2  -1.27410
+         3  -0.68002
+         4   0.28496
          5   0.92187
-         6   0.38453
-         7   0.01466
-         8  -0.22992
-Maximum change in item parameters was   -0.37984 for parameter   2 
+         6   0.38454
+         7   0.01467
+         8  -0.22991
+Maximum change in item parameters was   -0.37988 for parameter   2 
 Maximum change in regression parameters was   -0.08917
-Maximum change in covariance parameters was    0.51419
-Change in the deviance was    783.763
+Maximum change in covariance parameters was    0.51427
+Change in the deviance was    783.755
 .......................................................
 Iteration =    3
-   Deviance=     11846.662 
+   Deviance=     11846.666 
    Covariance 
-      2.49045
+      2.49066
    Correlation 
       1.00000
    Regression Coefficients 
-     -0.31255
+     -0.31252
    Item Parameters 
-         1   0.12581
-         2  -1.46598
-         3  -0.91777
-         4   0.17285
-         5   1.03630
+         1   0.12584
+         2  -1.46609
+         3  -0.91769
+         4   0.17291
+         5   1.03625
          6   0.54391
-         7   0.12306
-         8  -0.20903
-Maximum change in item parameters was   -0.23773 for parameter   3 
-Maximum change in regression parameters was   -0.04603
-Maximum change in covariance parameters was    0.54419
-Change in the deviance was    277.683
+         7   0.12310
+         8  -0.20898
+Maximum change in item parameters was   -0.23767 for parameter   3 
+Maximum change in regression parameters was   -0.04600
+Maximum change in covariance parameters was    0.54430
+Change in the deviance was    277.692
 .......................................................
 Iteration =    4
-   Deviance=     11725.815 
+   Deviance=     11725.765 
    Covariance 
-      2.99389
+      2.99413
    Correlation 
       1.00000
    Regression Coefficients 
-     -0.33979
+     -0.33966
    Item Parameters 
-         1   0.18898
-         2  -1.56037
-         3  -1.07168
-         4   0.05847
-         5   1.04357
-         6   0.62189
-         7   0.20967
-         8  -0.16005
-Maximum change in item parameters was   -0.15390 for parameter   3 
-Maximum change in regression parameters was   -0.02725
-Maximum change in covariance parameters was    0.50344
-Change in the deviance was    120.847
+         1   0.18904
+         2  -1.56041
+         3  -1.07146
+         4   0.05853
+         5   1.04336
+         6   0.62183
+         7   0.20976
+         8  -0.15989
+Maximum change in item parameters was   -0.15377 for parameter   3 
+Maximum change in regression parameters was   -0.02714
+Maximum change in covariance parameters was    0.50346
+Change in the deviance was    120.901
 .......................................................
 Iteration =    5
-   Deviance=     11670.182 
+   Deviance=     11669.965 
    Covariance 
-      3.40263
+      3.40248
    Correlation 
       1.00000
    Regression Coefficients 
-     -0.35761
+     -0.35727
    Item Parameters 
-         1   0.25577
-         2  -1.59103
-         3  -1.15823
-         4  -0.02948
-         5   1.00646
-         6   0.64021
-         7   0.25797
-         8  -0.11483
-Maximum change in item parameters was   -0.08795 for parameter   4 
-Maximum change in regression parameters was   -0.01781
-Maximum change in covariance parameters was    0.40874
-Change in the deviance was     55.633
+         1   0.25585
+         2  -1.59074
+         3  -1.15776
+         4  -0.02943
+         5   1.00587
+         6   0.64000
+         7   0.25811
+         8  -0.11449
+Maximum change in item parameters was   -0.08796 for parameter   4 
+Maximum change in regression parameters was   -0.01761
+Maximum change in covariance parameters was    0.40835
+Change in the deviance was     55.800
 .......................................................
 Iteration =    6
-   Deviance=     11645.734 
+   Deviance=     11645.205 
    Covariance 
-      3.69627
+      3.69498
    Correlation 
       1.00000
    Regression Coefficients 
-     -0.36936
+     -0.36873
    Item Parameters 
-         1   0.31842
-         2  -1.58216
-         3  -1.19486
-         4  -0.08511
-         5   0.96076
-         6   0.62623
-         7   0.27314
-         8  -0.08677
-Maximum change in item parameters was    0.06265 for parameter   1 
-Maximum change in regression parameters was   -0.01176
-Maximum change in covariance parameters was    0.29364
-Change in the deviance was     24.448
+         1   0.31848
+         2  -1.58121
+         3  -1.19399
+         4  -0.08510
+         5   0.95960
+         6   0.62576
+         7   0.27329
+         8  -0.08619
+Maximum change in item parameters was    0.06263 for parameter   1 
+Maximum change in regression parameters was   -0.01146
+Maximum change in covariance parameters was    0.29250
+Change in the deviance was     24.761
 .......................................................
 Iteration =    7
-   Deviance=     11635.477 
+   Deviance=     11634.548 
    Covariance 
-      3.88280
+      3.87957
    Correlation 
       1.00000
    Regression Coefficients 
-     -0.37665
+     -0.37568
    Item Parameters 
-         1   0.36694
-         2  -1.55471
-         3  -1.19902
-         4  -0.11251
-         5   0.92358
-         6   0.60119
-         7   0.26770
-         8  -0.07645
-Maximum change in item parameters was    0.04852 for parameter   1 
-Maximum change in regression parameters was   -0.00729
-Maximum change in covariance parameters was    0.18653
-Change in the deviance was     10.257
+         1   0.36691
+         2  -1.55291
+         3  -1.19763
+         4  -0.11254
+         5   0.92174
+         6   0.60037
+         7   0.26781
+         8  -0.07567
+Maximum change in item parameters was    0.04843 for parameter   1 
+Maximum change in regression parameters was   -0.00695
+Maximum change in covariance parameters was    0.18459
+Change in the deviance was     10.657
 .......................................................
 Iteration =    8
-   Deviance=     11631.292 
+   Deviance=     11629.990 
    Covariance 
-      3.98588
+      3.98020
    Correlation 
       1.00000
    Regression Coefficients 
-     -0.38069
+     -0.37939
    Item Parameters 
-         1   0.39714
-         2  -1.52439
-         3  -1.18628
+         1   0.39696
+         2  -1.52172
+         3  -1.18431
          4  -0.11976
-         5   0.90030
-         6   0.57777
-         7   0.25357
-         8  -0.07853
-Maximum change in item parameters was    0.03033 for parameter   2 
-Maximum change in regression parameters was   -0.00404
-Maximum change in covariance parameters was    0.10308
-Change in the deviance was      4.185
+         5   0.89784
+         6   0.57658
+         7   0.25358
+         8  -0.07761
+Maximum change in item parameters was    0.03120 for parameter   2 
+Maximum change in regression parameters was   -0.00371
+Maximum change in covariance parameters was    0.10063
+Change in the deviance was      4.558
 .......................................................
 Iteration =    9
-   Deviance=     11629.614 
+   Deviance=     11628.047 
    Covariance 
-      4.03304
+      4.02484
    Correlation 
       1.00000
    Regression Coefficients 
-     -0.38257
+     -0.38100
    Item Parameters 
-         1   0.41069
-         2  -1.50019
-         3  -1.16843
-         4  -0.11540
-         5   0.88987
-         6   0.56148
-         7   0.23897
-         8  -0.08661
-Maximum change in item parameters was    0.02420 for parameter   2 
-Maximum change in regression parameters was   -0.00188
-Maximum change in covariance parameters was    0.04716
-Change in the deviance was      1.678
+         1   0.41032
+         2  -1.49680
+         3  -1.16589
+         4  -0.11531
+         5   0.88696
+         6   0.55995
+         7   0.23881
+         8  -0.08564
+Maximum change in item parameters was    0.02491 for parameter   2 
+Maximum change in regression parameters was   -0.00161
+Maximum change in covariance parameters was    0.04464
+Change in the deviance was      1.943
 .......................................................
 Iteration =   10
-   Deviance=     11628.948 
+   Deviance=     11627.238 
    Covariance 
-      4.04813
+      4.03772
    Correlation 
       1.00000
    Regression Coefficients 
-     -0.38320
+     -0.38144
    Item Parameters 
-         1   0.41246
-         2  -1.48522
-         3  -1.15261
-         4  -0.10649
-         5   0.88848
-         6   0.55305
-         7   0.22803
-         8  -0.09570
-Maximum change in item parameters was    0.01581 for parameter   3 
-Maximum change in regression parameters was   -0.00063
-Maximum change in covariance parameters was    0.01509
-Change in the deviance was      0.665
+         1   0.41189
+         2  -1.48136
+         3  -1.14960
+         4  -0.10624
+         5   0.88533
+         6   0.55127
+         7   0.22771
+         8  -0.09476
+Maximum change in item parameters was    0.01629 for parameter   3 
+Maximum change in regression parameters was   -0.00044
+Maximum change in covariance parameters was    0.01288
+Change in the deviance was      0.809
 .......................................................
 Iteration =   11
-   Deviance=     11628.677 
+   Deviance=     11626.913 
    Covariance 
-      4.04824
+      4.03613
    Correlation 
       1.00000
    Regression Coefficients 
-     -0.38324
+     -0.38136
    Item Parameters 
-         1   0.40788
-         2  -1.47873
-         3  -1.14190
-         4  -0.09763
-         5   0.89193
-         6   0.55075
-         7   0.22182
-         8  -0.10297
-Maximum change in item parameters was    0.01071 for parameter   3 
-Maximum change in regression parameters was   -0.00004
-Maximum change in covariance parameters was    0.00011
-Change in the deviance was      0.271
+         1   0.40713
+         2  -1.47461
+         3  -1.13855
+         4  -0.09720
+         5   0.88869
+         6   0.54882
+         7   0.22137
+         8  -0.10209
+Maximum change in item parameters was    0.01105 for parameter   3 
+Maximum change in regression parameters was    0.00008
+Maximum change in covariance parameters was   -0.00159
+Change in the deviance was      0.326
 .......................................................
 Iteration =   12
-   Deviance=     11628.551 
+   Deviance=     11626.780 
    Covariance 
-      4.04374
+      4.03045
    Correlation 
       1.00000
    Regression Coefficients 
-     -0.38309
+     -0.38114
    Item Parameters 
-         1   0.40130
-         2  -1.47813
-         3  -1.13650
-         4  -0.09111
-         5   0.89686
-         6   0.55210
-         7   0.21960
-         8  -0.10744
-Maximum change in item parameters was   -0.00658 for parameter   1 
-Maximum change in regression parameters was    0.00015
-Maximum change in covariance parameters was   -0.00450
-Change in the deviance was      0.126
+         1   0.40039
+         2  -1.47394
+         3  -1.13295
+         4  -0.09052
+         5   0.89366
+         6   0.55012
+         7   0.21907
+         8  -0.10663
+Maximum change in item parameters was   -0.00674 for parameter   1 
+Maximum change in regression parameters was    0.00022
+Maximum change in covariance parameters was   -0.00568
+Change in the deviance was      0.133
 .......................................................
 Iteration =   13
-   Deviance=     11628.481 
+   Deviance=     11626.719 
    Covariance 
-      4.03975
+      4.02572
    Correlation 
       1.00000
    Regression Coefficients 
-     -0.38294
+     -0.38096
    Item Parameters 
-         1   0.39542
-         2  -1.48065
-         3  -1.13514
-         4  -0.08744
-         5   0.90125
-         6   0.55491
-         7   0.21997
-         8  -0.10935
-Maximum change in item parameters was   -0.00588 for parameter   1 
-Maximum change in regression parameters was    0.00014
-Maximum change in covariance parameters was   -0.00400
-Change in the deviance was      0.071
+         1   0.39438
+         2  -1.47648
+         3  -1.13150
+         4  -0.08674
+         5   0.89813
+         6   0.55294
+         7   0.21940
+         8  -0.10859
+Maximum change in item parameters was   -0.00600 for parameter   1 
+Maximum change in regression parameters was    0.00018
+Maximum change in covariance parameters was   -0.00473
+Change in the deviance was      0.061
 .......................................................
 Iteration =   14
-   Deviance=     11628.438 
+   Deviance=     11626.687 
    Covariance 
-      4.03796
+      4.02352
    Correlation 
       1.00000
    Regression Coefficients 
-     -0.38288
+     -0.38089
    Item Parameters 
-         1   0.39142
-         2  -1.48406
-         3  -1.13614
-         4  -0.08614
-         5   0.90422
-         6   0.55772
-         7   0.22153
-         8  -0.10948
-Maximum change in item parameters was   -0.00400 for parameter   1 
-Maximum change in regression parameters was    0.00007
-Maximum change in covariance parameters was   -0.00179
-Change in the deviance was      0.042
+         1   0.39029
+         2  -1.47996
+         3  -1.13249
+         4  -0.08538
+         5   0.90118
+         6   0.55579
+         7   0.22097
+         8  -0.10875
+Maximum change in item parameters was   -0.00409 for parameter   1 
+Maximum change in regression parameters was    0.00008
+Maximum change in covariance parameters was   -0.00220
+Change in the deviance was      0.032
 .......................................................
 Iteration =   15
-   Deviance=     11628.416 
+   Deviance=     11626.669 
    Covariance 
-      4.03825
+      4.02362
    Correlation 
       1.00000
    Regression Coefficients 
-     -0.38289
+     -0.38089
    Item Parameters 
-         1   0.38939
-         2  -1.48705
-         3  -1.13806
-         4  -0.08637
-         5   0.90572
-         6   0.55979
-         7   0.22328
-         8  -0.10870
-Maximum change in item parameters was   -0.00299 for parameter   2 
+         1   0.38820
+         2  -1.48303
+         3  -1.13444
+         4  -0.08558
+         5   0.90274
+         6   0.55791
+         7   0.22274
+         8  -0.10797
+Maximum change in item parameters was   -0.00306 for parameter   2 
 Maximum change in regression parameters was   -0.00001
-Maximum change in covariance parameters was    0.00030
-Change in the deviance was      0.022
+Maximum change in covariance parameters was    0.00010
+Change in the deviance was      0.018
 .......................................................
 Iteration =   16
-   Deviance=     11628.408 
+   Deviance=     11626.659 
    Covariance 
-      4.03981
+      4.02511
    Correlation 
       1.00000
    Regression Coefficients 
-     -0.38294
+     -0.38095
    Item Parameters 
-         1   0.38887
-         2  -1.48905
-         3  -1.13994
-         4  -0.08728
-         5   0.90609
-         6   0.56096
-         7   0.22467
-         8  -0.10765
-Maximum change in item parameters was   -0.00200 for parameter   2 
+         1   0.38766
+         2  -1.48509
+         3  -1.13636
+         4  -0.08650
+         5   0.90314
+         6   0.55911
+         7   0.22416
+         8  -0.10691
+Maximum change in item parameters was   -0.00206 for parameter   2 
 Maximum change in regression parameters was   -0.00006
-Maximum change in covariance parameters was    0.00156
-Change in the deviance was      0.008
+Maximum change in covariance parameters was    0.00149
+Change in the deviance was      0.010
 .......................................................
 Iteration =   17
-   Deviance=     11628.408 
+   Deviance=     11626.654 
    Covariance 
-      4.04177
+      4.02706
    Correlation 
       1.00000
    Regression Coefficients 
-     -0.38302
+     -0.38103
    Item Parameters 
-         1   0.38924
-         2  -1.49004
-         3  -1.14132
-         4  -0.08831
-         5   0.90581
-         6   0.56137
-         7   0.22552
-         8  -0.10675
-Maximum change in item parameters was   -0.00137 for parameter   3 
+         1   0.38803
+         2  -1.48612
+         3  -1.13777
+         4  -0.08754
+         5   0.90287
+         6   0.55954
+         7   0.22503
+         8  -0.10599
+Maximum change in item parameters was   -0.00141 for parameter   3 
 Maximum change in regression parameters was   -0.00007
-Maximum change in covariance parameters was    0.00196
+Maximum change in covariance parameters was    0.00195
+Change in the deviance was      0.005
+.......................................................
+Iteration =   18
+   Deviance=     11626.652 
+   Covariance 
+      4.02882
+   Correlation 
+      1.00000
+   Regression Coefficients 
+     -0.38109
+   Item Parameters 
+         1   0.38876
+         2  -1.48636
+         3  -1.13856
+         4  -0.08837
+         5   0.90232
+         6   0.55948
+         7   0.22540
+         8  -0.10538
+Maximum change in item parameters was   -0.00083 for parameter   4 
+Maximum change in regression parameters was   -0.00007
+Maximum change in covariance parameters was    0.00176
+Change in the deviance was      0.002
+.......................................................
+Iteration =   19
+   Deviance=     11626.651 
+   Covariance 
+      4.03007
+   Correlation 
+      1.00000
+   Regression Coefficients 
+     -0.38114
+   Item Parameters 
+         1   0.38949
+         2  -1.48615
+         3  -1.13884
+         4  -0.08889
+         5   0.90179
+         6   0.55919
+         7   0.22543
+         8  -0.10508
+Maximum change in item parameters was    0.00072 for parameter   1 
+Maximum change in regression parameters was   -0.00005
+Maximum change in covariance parameters was    0.00126
+Change in the deviance was      0.001
+.......................................................
+Iteration =   20
+   Deviance=     11626.650 
+   Covariance 
+      4.03078
+   Correlation 
+      1.00000
+   Regression Coefficients 
+     -0.38117
+   Item Parameters 
+         1   0.39002
+         2  -1.48577
+         3  -1.13879
+         4  -0.08911
+         5   0.90139
+         6   0.55885
+         7   0.22528
+         8  -0.10501
+Maximum change in item parameters was    0.00053 for parameter   1 
+Maximum change in regression parameters was   -0.00003
+Maximum change in covariance parameters was    0.00071
+Change in the deviance was      0.001
+.......................................................
+Iteration =   21
+   Deviance=     11626.650 
+   Covariance 
+      4.03104
+   Correlation 
+      1.00000
+   Regression Coefficients 
+     -0.38117
+   Item Parameters 
+         1   0.39031
+         2  -1.48540
+         3  -1.13858
+         4  -0.08912
+         5   0.90117
+         6   0.55859
+         7   0.22508
+         8  -0.10508
+Maximum change in item parameters was    0.00037 for parameter   2 
+Maximum change in regression parameters was   -0.00001
+Maximum change in covariance parameters was    0.00026
+Change in the deviance was      0.000
+.......................................................
+Iteration =   22
+   Deviance=     11626.650 
+   Covariance 
+      4.03103
+   Correlation 
+      1.00000
+   Regression Coefficients 
+     -0.38117
+   Item Parameters 
+         1   0.39042
+         2  -1.48514
+         3  -1.13836
+         4  -0.08903
+         5   0.90110
+         6   0.55842
+         7   0.22490
+         8  -0.10519
+Maximum change in item parameters was    0.00027 for parameter   2 
+Maximum change in regression parameters was    0.00000
+Maximum change in covariance parameters was   -0.00002
+Change in the deviance was      0.000
+.......................................................
+Iteration =   23
+   Deviance=     11626.650 
+   Covariance 
+      4.03088
+   Correlation 
+      1.00000
+   Regression Coefficients 
+     -0.38117
+   Item Parameters 
+         1   0.39039
+         2  -1.48499
+         3  -1.13818
+         4  -0.08891
+         5   0.90112
+         6   0.55841
+         7   0.22478
+         8  -0.10530
+Maximum change in item parameters was    0.00018 for parameter   3 
+Maximum change in regression parameters was    0.00001
+Maximum change in covariance parameters was   -0.00015
 Change in the deviance was      0.000
 
-  ! nodes = 30;
-Unknown command or argument: 'nodes'
+ show !estimate=latent >> ex1.shw;
+
+ itanal >> ex1.itn;
+
+ show cases !estimates=latent >> ex1_05.pv;
+
+ set n_plausible=10;
+
+ show cases !estimates=latent >> ex1_10.pv;
