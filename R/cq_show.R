@@ -40,25 +40,25 @@ cq_show <- function(fname, fit = c(TRUE, FALSE)) {
 
   # keep just the section on model parameters
   txt <- txt %>%
-    dplyr::filter(section_index == "TABLES OF RESPONSE MODEL PARAMETER ESTIMATES") %>%
+    dplyr::filter(.data$section_index == "TABLES OF RESPONSE MODEL PARAMETER ESTIMATES") %>%
     tidyr::extract(.data$value, "term", "^TERM (.+)", remove = FALSE) %>%
     tidyr::fill(.data$term) %>%
-    dplyr::filter(!is.na(term))
+    dplyr::filter(!is.na(.data$term))
 
   # remove the header and footer info. Just keep the parameter rows
   txt <- txt %>%
-    group_by(term) %>%
-    slice(seq(7, which(stringr::str_detect(.$value, term_break)) - 1))
+    dplyr::group_by(.data$term) %>%
+    dplyr::slice(seq(7, which(stringr::str_detect(.data$value, term_break)) - 1))
 
   # split text into two groups: one containing the term(s). the second containing stats
   txt <- txt %>%
-    mutate(value = trimws(value)) %>%
-    tidyr::separate(value, c("params", "stats"), "\\s{7,}")  # split on the 'big space' first
+    dplyr::mutate(value = trimws(.data$value)) %>%
+    tidyr::separate(.data$value, c("params", "stats"), "\\s{7,}")  # split on the 'big space' first
 
   # one column for each stat
   txt <- txt %>%
-    mutate(stats = trimws(stats)) %>%
-    tidyr::separate(stats, param_stats_cols, "[\\s\\(\\),\\*]+", convert = TRUE, fill = ifelse(fit, "warn", "right"))
+    dplyr::mutate(stats = trimws(.data$stats)) %>%
+    tidyr::separate(.data$stats, param_stats_cols, "[\\s\\(\\),\\*]+", convert = TRUE, fill = ifelse(fit, "warn", "right"))
 
   txt
 }
