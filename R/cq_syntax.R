@@ -158,3 +158,27 @@ cqc_resp_cols <- function(x) {
   return(paste0(dashed, collapse=", "))
 }
 
+
+#' exactly wrap text at the width specified
+#'
+#' \code{strwrap()} in base wraps at word boundaries. \code{cqc_exact_wrap()} is
+#' for when wrapping at the exact width is needed.
+#'
+#' @param some_text A string. (i.e. character vector of length 1)
+#' @param width The character width to wrap at
+#' @return A string wrapped at exactly \code{width} intervals
+#'
+#' @examples
+#' x <- cqc_exact_wrap("abcde", 2)
+#' x
+#' cat(x)
+#'
+#' @export
+cqc_exact_wrap <- function(some_text, width = 80) {
+  n <- ceiling(nchar(some_text) / width)
+  i <- seq.int(n)
+  x <- (i-1) * width + 1
+  y <- i * width
+  purrr::map2_chr(x, y, function(x, y, z) substr(z, x, y), some_text) %>%
+    paste(collapse = "\r\n")
+}
