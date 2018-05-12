@@ -29,3 +29,7 @@ test_that("condense resp cols", {
   expect_equal(cqc_resp_cols(c(1,3,4,6)), "1, 3-4, 6")
   expect_equal(cqc_resp_cols(c(1,2,3,4,5,6)), "1-6")
 })
+
+test_that("exact wrap wraps exactly", {
+  expect_equal(cqc_exact_wrap("abcde", 2), "ab\r\ncd\r\ne")
+})

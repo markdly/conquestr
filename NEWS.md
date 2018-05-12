@@ -6,6 +6,8 @@ relates to #20)
 output as well as when fit statistics are not included in the output. (#19, #20)
 * `cqc_resp_cols` added to provide condensed item column specifications for the
 ConQuest format statement.
+* `cqc_exact_wrap` added to wrap text at exactly the width specified. Useful
+when dealing with long ConQuest key statements
 
 # conquestr 0.1.2
 
