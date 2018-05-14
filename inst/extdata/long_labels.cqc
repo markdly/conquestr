@@ -1,0 +1,12 @@
+/*  example analysis  */
+reset;
+Title long_labels;   
+data ex1.txt;
+format pid 11-15 responses 1-9;
+codes 1,2,3,4,5,9;
+label << long_labels.lab;
+key 252552444 ! 1;
+model item;
+estimate ! nodes = 30;
+show !estimate=latent >> long_labels.shw;
+itanal >> long_labels.itn;
