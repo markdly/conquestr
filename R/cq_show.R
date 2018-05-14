@@ -33,8 +33,8 @@ cq_show <- function(fname, fit = c(TRUE, FALSE)) {
     tidyr::fill(.data$section_index)
 
   ## retaining parameter information
-  param_stats_cols <- c("est", "err", "uw_mnsq", "uw_ci_lo", "uw_ci_hi", "uw_t",
-                        "mnsq", "ci_lo", "ci_hi", "t")
+  param_stats_cols <- c("index", "label", "est", "err", "uw_mnsq", "uw_ci_lo",
+                        "uw_ci_hi", "uw_t", "mnsq", "ci_lo", "ci_hi", "t")
   term_break <- "^--------------------------------------------------------------------------------$"
 
 
@@ -50,15 +50,10 @@ cq_show <- function(fname, fit = c(TRUE, FALSE)) {
     dplyr::group_by(.data$term) %>%
     dplyr::slice(seq(7, which(stringr::str_detect(.data$value, term_break)) - 1))
 
-  # split text into two groups: one containing the term(s). the second containing stats
+  # split line content into separate columns
   txt <- txt %>%
     dplyr::mutate(value = trimws(.data$value)) %>%
-    tidyr::separate(.data$value, c("params", "stats"), "\\s{7,}")  # split on the 'big space' first
-
-  # one column for each stat
-  txt <- txt %>%
-    dplyr::mutate(stats = trimws(.data$stats)) %>%
-    tidyr::separate(.data$stats, param_stats_cols, "[\\s\\(\\),\\*]+", convert = TRUE, fill = ifelse(fit, "warn", "right"))
+    tidyr::separate(.data$value, param_stats_cols, "[\\s\\(\\),\\*]+", convert = TRUE, fill = ifelse(fit, "warn", "right"))
 
   txt
 }
