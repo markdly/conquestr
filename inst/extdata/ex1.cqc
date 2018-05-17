@@ -18,3 +18,7 @@ show cases !estimates=latent >> ex1_05.pv;
 /* 10 plausible values */
 set n_plausible=10;
 show cases !estimates=latent >> ex1_10.pv;
+
+/* score equivalence tables */
+equivalence mle >> ex1_mle.eqv;
+equivalence wle >> ex1_wle.eqv;
