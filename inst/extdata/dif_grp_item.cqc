@@ -1,0 +1,10 @@
+/*  dif analysis  */
+reset;
+Title dif example;
+data dif.txt;
+format grp 22 responses 1-20;
+codes 0,1;
+model item + grp + grp*item;
+estimate;
+show ! estimate=latent >> dif.shw;
+itanal >> dif.itn;
