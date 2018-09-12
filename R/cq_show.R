@@ -33,15 +33,16 @@ cq_show <- function(fname, fit = c(TRUE, FALSE)) {
     tidyr::fill(.data$section_index)
 
   ## retaining parameter information
-  param_stats_cols <- c("index", "label", "est", "err", "uw_mnsq", "uw_ci_lo",
-                        "uw_ci_hi", "uw_t", "mnsq", "ci_lo", "ci_hi", "t")
+  stats_cols <- c("est", "err", "uw_mnsq", "uw_ci_lo", "uw_ci_hi", "uw_t",
+                  "mnsq", "ci_lo", "ci_hi", "t")
+  param_stats_cols <- c("index", "label", stats_cols)
   term_break <- "^--------------------------------------------------------------------------------$"
 
 
   # keep just the section on model parameters
   txt <- txt %>%
     dplyr::filter(.data$section_index == "TABLES OF RESPONSE MODEL PARAMETER ESTIMATES") %>%
-    tidyr::extract(.data$value, "term", "^TERM (.+)", remove = FALSE) %>%
+    tidyr::extract(.data$value, "term", "^TERM (?:.+): (.+)", remove = FALSE) %>%
     tidyr::fill(.data$term) %>%
     dplyr::filter(!is.na(.data$term))
 
@@ -52,8 +53,19 @@ cq_show <- function(fname, fit = c(TRUE, FALSE)) {
 
   # split line content into separate columns
   txt <- txt %>%
+    dplyr::mutate(term_cols = stringr::str_split(.data$term, "\\*")) %>%
+    dplyr::mutate(new_cols = purrr::map(
+      .data$term_cols, ~ c(rbind(paste(.x, "index", sep = "_"), .x))
+    )) %>%
     dplyr::mutate(value = trimws(.data$value)) %>%
-    tidyr::separate(.data$value, param_stats_cols, "[\\s\\(\\),\\*]+", convert = TRUE, fill = ifelse(fit, "warn", "right"))
+    tidyr::nest() %>%
+    dplyr::mutate(data = purrr::map(data, function(x) {
+      into_cols <- c(unlist(unique(x$new_cols)), stats_cols)
+      x %>%
+        tidyr::separate(.data$value, into_cols, "[\\s\\(\\),\\*]+",
+                        convert = TRUE, fill = ifelse(fit, "warn", "right")) %>%
+        dplyr::select(-term_cols, -new_cols)
+    }))
 
   txt
 }

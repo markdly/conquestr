@@ -1,3 +1,7 @@
+# conquestr 0.1.3.9000
+
+* `cq_show` now imports all tables of response model parameter estimates. For example three tables are imported if the conquest model statement was `item + gender + item*gender` (#30)
+
 # conquestr 0.1.2.9000
 
 * `cq_show` has been added to import item parameters and standard errors (also
